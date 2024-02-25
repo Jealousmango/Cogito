@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq6qepk44k4t8"]
+
+[ext_resource type="Script" path="res://COGITO/EasyMenus/Scenes/keybind_row.gd" id="1_m4gnr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltbnx"]
+font_size = 26
+
+[node name="KeybindRow" type="HBoxContainer"]
+script = ExtResource("1_m4gnr")
+
+[node name="ActionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Action"
+label_settings = SubResource("LabelSettings_ltbnx")
+
+[node name="KeyboardButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Keyboard"
+
+[node name="JoypadButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Gamepad"
