@@ -3,11 +3,13 @@ signal start_game_pressed
 
 @onready var start_game_button: Button = $%StartGameButton
 @onready var content: Control = $%Content 
+@onready var controls_menu_button: Control = $%ControlsTestButton 
 
 #region UI AUDIO
 @export var sound_hover : AudioStream
 @export var sound_click : AudioStream
 var playback : AudioStreamPlaybackPolyphonic
+@onready var controls_menu = $ControlsMenu
 
 
 func _enter_tree() -> void:
@@ -59,3 +61,9 @@ func close_options():
 
 func _on_start_game_button_pressed():
 	emit_signal("start_game_pressed")
+
+func _on_controls_menu_button_pressed():
+	emit_signal("controls_menu_button_pressed")
+	content.hide()
+	controls_menu.show()
+	controls_menu.on_open()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8qi3ya1od153"]
+[gd_scene load_steps=5 format=3 uid="uid://c8qi3ya1od153"]
 
 [ext_resource type="Script" path="res://COGITO/EasyMenus/Scenes/controls_menu.gd" id="1_e54tx"]
 [ext_resource type="Script" path="res://COGITO/EasyMenus/Scripts/follow_focus_center.gd" id="1_xrgk3"]
+[ext_resource type="PackedScene" uid="uid://rhbdiixguovr" path="res://COGITO/EasyMenus/Scenes/rebind_menu.tscn" id="3_1yxgb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrwqb"]
 
@@ -77,5 +78,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 25
 text = "Back"
+
+[node name="RebindMenu" parent="MarginContainer" instance=ExtResource("3_1yxgb")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/BackButton" to="." method="go_back"]

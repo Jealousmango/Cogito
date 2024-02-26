@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq6tvhqcy2aps"]
+[gd_scene load_steps=5 format=3 uid="uid://dq6tvhqcy2aps"]
 
 [ext_resource type="Theme" uid="uid://leudtt5jh16a" path="res://COGITO/Theme/Cogito_Theme_A.tres" id="1_74dia"]
 [ext_resource type="Script" path="res://COGITO/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
+[ext_resource type="PackedScene" uid="uid://c8qi3ya1od153" path="res://COGITO/EasyMenus/Scenes/controls_menu.tscn" id="3_cqke3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wrn81"]
 
@@ -57,6 +58,16 @@ focus_previous = NodePath("../QuitButton")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
+[node name="ControlsTestButton" type="Button" parent="Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+
 [node name="QuitButton" type="Button" parent="Content"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
@@ -66,5 +77,10 @@ focus_next = NodePath("../StartGameButton")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
+[node name="ControlsMenu" parent="." instance=ExtResource("3_cqke3")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Content/ControlsTestButton" to="." method="_on_controls_menu_button_pressed"]
 [connection signal="pressed" from="Content/QuitButton" to="." method="quit"]
