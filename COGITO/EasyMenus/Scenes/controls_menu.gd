@@ -40,6 +40,7 @@ var inputActionBlacklistDict := {
 	"ui_text_backspace_word" : null,
 	"ui_text_word" : null,
 	"ui_text_word.macos" : null,
+	"ui_text_backspace_all_to_left" : null,
 	"" : null,
 }
 
@@ -66,8 +67,8 @@ func on_open():
 
 func load_options():
 	#var err = config.load(OptionsConstants.config_file_name)
-	var arrayStartTime = Time.get_ticks_usec()
-	#print(arrayStartTime)
+	var array_start_time = Time.get_ticks_usec()
+	#print(array_start_time)
 	
 	for action in input_map:
 		if !inputActionBlacklist.has(action):
@@ -90,7 +91,7 @@ func load_options():
 		#if !inputActionBlacklistDict.has(action):
 			#print(action)
 	#var dictEndTime = Time.get_ticks_usec()
-	#var totalArrayTime = arrayEndTime - arrayStartTime
+	#var totalArrayTime = arrayEndTime - array_start_time
 	#var totalDictTime = dictEndTime - dictStartTime
 	#
 	#print("Array Total Time:")
