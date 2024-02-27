@@ -1,5 +1,6 @@
 extends Control
 signal start_game_pressed
+signal controls_menu_button_pressed
 
 @onready var start_game_button: Button = $%StartGameButton
 @onready var content: Control = $%Content 
