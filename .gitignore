@@ -12,3 +12,6 @@ export_presets.cfg
 .godot/
 data_*/
 
+# Mac igores
+.DS_Store
+
