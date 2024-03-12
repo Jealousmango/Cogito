@@ -12,13 +12,15 @@ func set_action_name(new_action_name: String):
 	refresh_data()
 
 func refresh_data():
-	action_label.text = action_name
+	action_label.text = action_name if !ContolMenuConstants.FRIENDLY_NAMES_DICT.has(action_name) else ContolMenuConstants.FRIENDLY_NAMES_DICT.get(action_name)
 	var keyboard_input = InputHelper.get_keyboard_input_for_action(action_name)
 	var joypad_input = InputHelper.get_joypad_input_for_action(action_name)
 	
 	
 	if keyboard_input != null:
+		#var selected_button_text: String = keyboard_input.as_text()
 		keyboard_button.text = keyboard_input.as_text()
+		#keyboard_button.text = selected_button_text this should be on the title, not button
 		keyboard_button.pressed.connect(_on_keyboard_rebind_button_pressed.bind(action_name))	
 		if keyboard_input is InputEventKey:
 			var event_key = keyboard_input as InputEventKey
