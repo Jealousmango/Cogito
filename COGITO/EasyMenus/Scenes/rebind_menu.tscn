@@ -70,11 +70,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="YesButton" type="Button" parent="CenterContainer/Graphics/Panel/VBoxContainer/SaveDialog/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Yes"
 
 [node name="NoButton" type="Button" parent="CenterContainer/Graphics/Panel/VBoxContainer/SaveDialog/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "No"

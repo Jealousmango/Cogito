@@ -75,7 +75,7 @@ func load_options():
 	#print(array_start_time)
 	
 	for action in input_map:
-		if !inputActionBlacklist.has(action):
+		if !ContolMenuConstants.INPUT_ACTION_BLACKLIST_ARRAY.has(action):
 			var new_keybind_row = keybind_row.instantiate()
 			keybind_container.add_child(new_keybind_row)
 			keybind_rows[action] = new_keybind_row
