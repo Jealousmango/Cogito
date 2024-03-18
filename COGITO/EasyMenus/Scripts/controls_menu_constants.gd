@@ -64,4 +64,5 @@ const FRIENDLY_NAMES_DICT := {
 	"reload" : "Reload",
 	"ui_next_tab" : "UI Next Tab",
 	"ui_prev_tab" : "UI Prev Tab",
+	"pause" : "Pause",
 }

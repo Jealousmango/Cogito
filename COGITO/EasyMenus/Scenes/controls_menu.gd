@@ -7,49 +7,9 @@ var config = ConfigFile.new()
 var input_map: Array[StringName] = InputMap.get_actions()
 var keybind_rows := Dictionary()
 
-# The Set data type isn't available with GDScript
-# A Dictionary can be used for similar performance
-var inputActionBlacklistDict := {
-	"ui_accept" : null,
-	"ui_select" : null,
-	"ui_cancel" : null,
-	"ui_focus_next" : null,
-	"ui_focus_prev" : null,
-	"ui_left" : null,
-	"ui_right" : null,
-	"ui_up" : null,
-	"ui_down" : null,
-	"ui_page_up" : null,
-	"ui_page_down" : null,
-	"ui_home" : null,
-	"ui_end" : null,
-	"ui_cut" : null,
-	"ui_copy" : null,
-	"ui_paste" : null,
-	"ui_undo" : null,
-	"ui_redo" : null,
-	"ui_text_completion_query" : null,
-	"ui_text_accept" : null,
-	"ui_text_replace" : null,
-	"ui_text_newline" : null,
-	"ui_text_newline_blank" : null,
-	"ui_text_newline_above" : null,
-	"ui_text_text_indent" : null,
-	"ui_text_dedent" : null,
-	"ui_text_backspace" : null,
-	"ui_text_backspace_word" : null,
-	"ui_text_word" : null,
-	"ui_text_word.macos" : null,
-	"ui_text_backspace_all_to_left" : null,
-	"" : null,
-}
 
 # These actions should not be included in the rebind menu
-var inputActionBlacklist: Array[StringName] = ["ui_accept", "ui_select", "ui_cancel", "ui_focus_next", "ui_focus_prev", "ui_left", "ui_right", "ui_up", "ui_down", "ui_page_up","ui_page_down", "ui_home","ui_end", "ui_cut", "ui_copy", "ui_paste","ui_undo", "ui_redo", "ui_text_completion_query", "ui_text_completion_accept", "ui_text_accept", "ui_text_replace", "ui_text_newline", "ui_text_newline_blank", "ui_text_newline_above", "ui_text_text_indent", "ui_text_dedent", "ui_text_backspace", "ui_text_backspace_word", "ui_text_word.macos","ui_text_backspace_all_to_left", "ui_text_backspace_all_to_left.macos", "ui_text_delete", "ui_text_delete_word", "ui_text_text_delete_word.macos", "ui_text_delete_all_to_right", "ui_text_delete_all_to_right.macos", "ui_text_caret_left", "ui_text_caret_word_left", "ui_text_caret_word_left.macos", "ui_text_caret_right", "ui_text_completion_replace", "ui_text_indent", "ui_text_backspace_word.macos","ui_text_delete_word.macos", "ui_text_caret_word_right", "ui_text_caret_word_right.macos", "ui_text_caret_up", "ui_text_caret_down", "ui_text_caret_line_start", "ui_text_caret_line_start.macos", "ui_text_caret_line_end", "ui_text_caret_line_end.macos", "ui_text_caret_page_up", "ui_text_caret_page_down", "ui_text_caret_document_start", "ui_text_caret_document_start.macos", "ui_text_caret_document_end", "ui_text_caret_document_end.macos", "ui_text_caret_add_below", "ui_text_caret_add_below.macos", "ui_text_caret_add_above", "ui_text_caret_add_above.macos", "ui_text_scroll_up", "ui_text_scroll_up.macos", "ui_text_scroll_down", "ui_text_scroll_down.macos", "ui_text_select_all", "ui_text_select_word_under_caret", "ui_text_select_word_under_caret.macos", "ui_text_add_selection_for_next_occurrence", "ui_text_clear_carets_and_selection", "ui_text_toggle_insert_mode", "ui_menu", "ui_text_submit", "ui_graph_duplicate", "ui_graph_delete", "ui_filedialog_up_one_level", "ui_filedialog_refresh", "ui_filedialog_show_hidden", "ui_swap_input_direction"]
 
-var friendly_names_dict := {
-	"jump" : "Jump"
-}
 
 @onready var keybind_row = preload("res://COGITO/EasyMenus/Scenes/keybind_row.tscn")
 @onready var keybind_container = %VBoxContainer
